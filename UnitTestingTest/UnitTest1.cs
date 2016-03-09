@@ -15,7 +15,7 @@ namespace UnitTestingTest
         public void test_stating_something()
         {
             remark = "Tom-ay-to, tom-aaaah-to.";
-            Assert.AreEqual("Whatever.", bob.hey(remark));
+            Assert.AreEqual("Whatever.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace UnitTestingTest
         {
 
             remark = "WATCH OUT!";
-            Assert.AreEqual("Whoa, chill out!", bob.hey(remark));
+            Assert.AreEqual("Whoa, chill out!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace UnitTestingTest
                 .OrderBy(x => Guid.NewGuid()).Select(x => x.A));
 
 
-            Assert.AreEqual("Whoa, chill out!", bob.hey(remark));
+            Assert.AreEqual("Whoa, chill out!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace UnitTestingTest
         {
 
             remark = "Does this cryogenic chamber make me look fat?";
-            Assert.AreEqual("Sure.", bob.hey(remark));
+            Assert.AreEqual("Sure.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace UnitTestingTest
         {
 
             remark = "You are, what, like 15?";
-            Assert.AreEqual("Sure.", bob.hey(remark));
+            Assert.AreEqual("Sure.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace UnitTestingTest
                 .Select(a => new {A = (char) (a)})
                 .OrderBy(x => Guid.NewGuid()).Select(x => x.A)) + "?";
 
-            Assert.AreEqual("Sure.", bob.hey(remark));
+            Assert.AreEqual("Sure.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -68,7 +68,7 @@ namespace UnitTestingTest
         {
 
             remark = "Let's go make out behind the gym!";
-            Assert.AreEqual("Whatever.", bob.hey(remark));
+            Assert.AreEqual("Whatever.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace UnitTestingTest
         {
 
             remark = "It's OK if you don't want to go to the DMV.";
-            Assert.AreEqual("Whatever.", bob.hey(remark));
+            Assert.AreEqual("Whatever.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ namespace UnitTestingTest
         {
 
             remark = "WHAT THE HELL WERE YOU THINKING?";
-            Assert.AreEqual("Whoa, chill out!", bob.hey(remark));
+            Assert.AreEqual("Whoa, chill out!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -92,7 +92,7 @@ namespace UnitTestingTest
         {
 
             remark = "1, 2, 3 GO!";
-            Assert.AreEqual("Whoa, chill out!", bob.hey(remark));
+            Assert.AreEqual("Whoa, chill out!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -100,7 +100,7 @@ namespace UnitTestingTest
         {
 
             remark = "1, 2, 3";
-            Assert.AreEqual("Whatever.", bob.hey(remark));
+            Assert.AreEqual("Whatever.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -108,7 +108,7 @@ namespace UnitTestingTest
         {
 
             remark = "4?";
-            Assert.AreEqual("Sure.", bob.hey(remark));
+            Assert.AreEqual("Sure.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -116,7 +116,7 @@ namespace UnitTestingTest
         {
 
             remark = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!";
-            Assert.AreEqual("Whoa, chill out!", bob.hey(remark));
+            Assert.AreEqual("Whoa, chill out!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -124,7 +124,7 @@ namespace UnitTestingTest
         {
 
             remark = "I HATE YOU";
-            Assert.AreEqual("Whoa, chill out!", bob.hey(remark));
+            Assert.AreEqual("Whoa, chill out!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -132,7 +132,7 @@ namespace UnitTestingTest
         {
 
             remark = "}ing with ? means a question.";
-            Assert.AreEqual("Whatever.", bob.hey(remark));
+            Assert.AreEqual("Whatever.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -140,7 +140,7 @@ namespace UnitTestingTest
         {
 
             remark = "Wait! Hang on. Are you going to be OK?";
-            Assert.AreEqual("Sure.", bob.hey(remark));
+            Assert.AreEqual("Sure.", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -148,7 +148,7 @@ namespace UnitTestingTest
         {
 
             remark = "";
-            Assert.AreEqual("Fine. Be that way!", bob.hey(remark));
+            Assert.AreEqual("Fine. Be that way!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -156,7 +156,7 @@ namespace UnitTestingTest
         {
 
             remark = "           ";
-            Assert.AreEqual("Fine. Be that way!", bob.hey(remark));
+            Assert.AreEqual("Fine. Be that way!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -164,7 +164,7 @@ namespace UnitTestingTest
         {
 
             remark = "\t\t\t\t\t";
-            Assert.AreEqual("Fine. Be that way!", bob.hey(remark));
+            Assert.AreEqual("Fine. Be that way!", bob.Hey(remark));
         }
 
         [TestMethod]
@@ -173,7 +173,7 @@ namespace UnitTestingTest
 
             remark = @"Does this cryogenic chamber make me look fat?
                        no";
-            Assert.AreEqual("Whatever.", bob.hey(remark));
+            Assert.AreEqual("Whatever.", bob.Hey(remark));
         }
 
     }

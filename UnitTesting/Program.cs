@@ -27,7 +27,10 @@ namespace UnitTesting
                     break;
                 }
 
-                bob.hey(remark);
+                remark = bob.Hey(remark);
+
+                Console.WriteLine();
+                Console.WriteLine(remark);
 
                 againString = "else ";
             }
