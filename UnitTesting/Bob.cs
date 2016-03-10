@@ -32,12 +32,9 @@ namespace UnitTesting
 
         public bool CheckYelling(string remark)
         {
-            for (int i = 0; i < remark.Length; i++)
+            if (remark.Any(t => char.IsDigit(t) && remark.EndsWith("!")))
             {
-                if (char.IsDigit(remark[i]) && remark.EndsWith("!"))
-                {
-                    return true;
-                }
+                return true;
             }
 
             return remark == ReplaceNumbers(remark.ToUpper());
