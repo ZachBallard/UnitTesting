@@ -2,38 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace UnitTesting
 {
     public class Bob
     {
-
         public string Hey(string remark)
         {
             if (CheckSilence(remark))
             {
                 return "Fine. Be that way!";
             }
-            else if (CheckQuestion(remark))
-            {
-                return "Sure.";
-            }
-            else if (CheckYelling(remark))
+            if (CheckYelling(remark))
             {
                 return "Whoa, chill out!";
             }
-
-            else
+            if (CheckQuestion(remark))
             {
-                return "Whatever.";
+                return "Sure.";
             }
-
+            return "Whatever.";
         }
 
         public bool CheckYelling(string remark)
         {
-            return remark == remark.ToUpper();
+            return remark == IsAllUpper(remark);
+        }
+
+        private string IsAllUpper(string remark)
+        {
+            return "";
         }
 
         public bool CheckQuestion(string remark)
@@ -45,5 +45,7 @@ namespace UnitTesting
         {
             return remark == null || remark.Trim() == "";
         }
+
+
     }
 }
