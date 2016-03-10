@@ -15,30 +15,50 @@ namespace UnitTesting
             {
                 return "Fine. Be that way!";
             }
+
             if (CheckYelling(remark))
             {
                 return "Whoa, chill out!";
             }
+
             if (CheckQuestion(remark))
             {
                 return "Sure.";
             }
+           
+          
             return "Whatever.";
         }
 
         public bool CheckYelling(string remark)
         {
-            return remark == IsAllUpper(remark);
+            for (int i = 0; i < remark.Length; i++)
+            {
+                if (char.IsDigit(remark[i]) && remark.EndsWith("!"))
+                {
+                    return true;
+                }
+            }
+
+            return remark == ReplaceNumbers(remark.ToUpper());
         }
 
-        private string IsAllUpper(string remark)
+        private string ReplaceNumbers(string remark)
         {
-            return "";
+            for (int i = 0; i < remark.Length; i++)
+            {
+                if (char.IsDigit(remark[i]))
+                {
+                    remark = remark.Replace(remark[i], '*');
+                }
+            }
+
+            return remark;
         }
 
         public bool CheckQuestion(string remark)
         {
-            return remark.EndsWith("?") && remark != remark.ToUpper();
+            return remark.EndsWith("?");
         }
 
         public bool CheckSilence(string remark)
