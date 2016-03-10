@@ -10,35 +10,35 @@ namespace UnitTesting
     {
 
         public string Hey(string remark)
-        { 
+        {
             if (CheckSilence(remark))
             {
                 return "Fine. Be that way!";
-            }
-            else if (CheckYelling(remark))
-            {
-                return "Whoa, chill out!";
             }
             else if (CheckQuestion(remark))
             {
                 return "Sure.";
             }
+            else if (CheckYelling(remark))
+            {
+                return "Whoa, chill out!";
+            }
+
             else
             {
                 return "Whatever.";
             }
-           
+
         }
 
         public bool CheckYelling(string remark)
         {
-            int useless;
-            return (remark == remark.ToUpper() && int.TryParse(remark, out useless)) && !remark.EndsWith("!");
+            return remark == remark.ToUpper();
         }
 
         public bool CheckQuestion(string remark)
         {
-            return remark.EndsWith("?");
+            return remark.EndsWith("?") && remark != remark.ToUpper();
         }
 
         public bool CheckSilence(string remark)
